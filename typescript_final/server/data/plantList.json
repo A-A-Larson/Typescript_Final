@@ -1,0 +1,78 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "common_name": "Gala Apple",
+        "scientific_name": [],
+        "other_name": [],
+        "default_image": {
+            "image_id": 0,
+            "license": 0,
+            "license_name": "",
+            "license_url": "",
+            "original_url": "",
+            "regular_url": "",
+            "medium_url": "",
+            "small_url": "",
+            "thumbnail": ""
+          }           
+      },
+      {
+        "id": 2,
+        "common_name": "Honeyberry",
+        "scientific_name": [],
+        "other_name": [],
+        "default_image": {
+            "image_id": 0,
+            "license": 0,
+            "license_name": "",
+            "license_url": "",
+            "original_url": "",
+            "regular_url": "",
+            "medium_url": "",
+            "small_url": "",
+            "thumbnail": ""
+            }
+      },
+      {
+        "id": 3,
+        "common_name": "Paw Paw",
+        "scientific_name": [],
+        "other_name": [],
+        "default_image": {
+            "image_id": 0,
+            "license": 0,
+            "license_name": "",
+            "license_url": "",
+            "original_url": "",
+            "regular_url": "",
+            "medium_url": "",
+            "small_url": "",
+            "thumbnail": ""
+            }
+      },
+      {
+        "id": 4,
+        "common_name": "Sea Buckthorn",
+        "scientific_name": [],
+        "other_name": [],
+        "default_image": {
+            "image_id": 0,
+            "license": 0,
+            "license_name": "",
+            "license_url": "",
+            "original_url": "",
+            "regular_url": "",
+            "medium_url": "",
+            "small_url": "",
+            "thumbnail": ""
+            }
+      }
+    ],
+    "to": 0,
+    "per_page": 0,
+    "current_page": 0,
+    "from": 0,
+    "last_page": 0,
+    "total": 0
+}

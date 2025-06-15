@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --lightaccent: rgb(234, 234, 234);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;  
+}
+
+h3 {
+  font-size: 1.25rem;
+  padding-top: .5em;
+}
+
+
+.mainGrid {    
+  padding: 1em;
+  display: grid;
+  gap: 1em;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:  "picture      picture"
+                        "identify     identify"
+                        "prepare      prepare"
+                        "prevent      prevent"
+                        "propagate    propagate"
+                        "picking      picking";
+  
+}  
+
+
+.searchSection {
+  border: solid var(--foreground);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+}
+
+.searchInput {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.searchInput:focus {
+  outline: solid var(--lightaccent);
+}
+
+.searchSubmitButton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 7ch;
+}
+
+.intro {
+  max-width: 70ch;
+  text-align: justify;
+  padding-top: 1em;
+}
+
+.apiResultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plantListButtonContainer {
+  width: 80vw;
+  display: flex;
+  justify-self: center;
+}
+
+.plantListButton {
+  width: 100%;
+}
+
+.plantListButton:hover {
+  background-color: var(--lightaccent);
+}
+
+.plantDetailsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageSection {
+  grid-area: picture;
+  height: 400px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 0px 50px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.plantImage {
+  border-radius: 0px 50px;
+  object-fit: cover;
+}
+
+.idSection {
+  grid-area: identify;
+  padding: 1em;
+  border-radius: 50px 0px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.description {
+  text-align: justify;
+}
+
+.preparationSection {
+  grid-area: prepare;
+  padding: 1em;
+  background-color: #E5D9B6;
+  border-radius: 50px 0px;
+}
+
+.preparationSectionContainer {
+  padding: 2em;
+  background-color: var(--background);
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 0px; 
+}
+
+.hardinessImage {
+  height: 100%;
+  width: auto;
+}
+
+.preventionSection {
+  grid-area: prevent;
+  padding: 1em;
+  background-color: #A4BE7B;
+  border-radius: 50px 0px;
+}
+
+.preventionSectionContainer {
+  padding: 2em;
+  background-color: var(--background);
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 0px;
+}
+
+.pruningMonth {
+  padding-bottom: 1em;
+}
+
+.propagationSection {
+  grid-area: propagate;
+  padding: 1em;
+  background-color: #5F8D4E;
+  border-radius: 0px 50px;
+}
+
+.propagationSectionContainer {
+  padding: 2em;
+  background-color: var(--background);
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 50px;
+}
+
+.propagationMethods {
+  padding-bottom: 1em;
+}
+
+.pickingSection {
+  grid-area: picking;
+  padding: 1em;
+  background-color: #285430;
+  border-radius: 0px 50px;
+}
+
+.pickingSectionContainer {
+  padding: 2em;
+  background-color: var(--background);
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 50px;
+}
+
+
+
+@media (min-width: 1330px) {
+  .mainGrid {    
+    padding: 1em;
+    display: grid;
+    gap: 1em;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "picture      picture     identify    identify"
+                         "picture      picture     identify    identify"
+                         "prepare      prevent     propagate   picking "
+                         "prepare      prevent     propagate   picking ";
+    
+  }  
+
+  .imageSection {
+    grid-area: picture;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 0px 50px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  .plantImage {
+    border-radius: 0px 50px;
+    object-fit: cover;
+  }
+}
