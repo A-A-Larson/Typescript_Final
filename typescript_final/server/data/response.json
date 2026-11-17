@@ -39,8 +39,8 @@
           "max": "6"
         },
         "hardiness_location": {
-          "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380",
-          "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380'></iframe>"
+          "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og",
+          "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og'></iframe>"
         },
         "watering": "Frequent",
         "depth_water_requirement": [],
@@ -78,7 +78,7 @@
         "pruning_count": [],
         "seeds": 1,
         "maintenance": null,
-        "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362&key=sk-9HUZ679976f54331b8380",
+        "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362",
         "soil": [],
         "growth_rate": "High",
         "drought_tolerant": false,
@@ -155,8 +155,8 @@
           "max": "8"
         },
         "hardiness_location": {
-          "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380",
-          "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380'></iframe>"
+          "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og",
+          "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og'></iframe>"
         },
         "watering": "Regularly",
         "depth_water_requirement": [],
@@ -194,7 +194,7 @@
         "pruning_count": [],
         "seeds": 1,
         "maintenance": null,
-        "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362&key=sk-9HUZ679976f54331b8380",
+        "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362",
         "soil": [],
         "growth_rate": "High",
         "drought_tolerant": false,
@@ -270,8 +270,8 @@
         "max": "8"
       },
       "hardiness_location": {
-        "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380",
-        "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380'></iframe>"
+        "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og",
+        "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og'></iframe>"
       },
       "watering": "Regularly",
       "depth_water_requirement": [],
@@ -306,7 +306,7 @@
       "pruning_count": [],
       "seeds": 1,
       "maintenance": null,
-      "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362&key=sk-9HUZ679976f54331b8380",
+      "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362",
       "soil": [],
       "growth_rate": "High",
       "drought_tolerant": false,
@@ -383,8 +383,8 @@
       "max": "8"
     },
     "hardiness_location": {
-      "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380",
-      "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og&key=sk-9HUZ679976f54331b8380'></iframe>"
+      "full_url": "https://perenual.com/api/hardiness-map?species_id=362&size=og",
+      "full_iframe": "<iframe frameborder=0 scrolling=yes seamless=seamless width=1000 height=550 style='margin:auto;' src='https://perenual.com/api/hardiness-map?species_id=362&size=og'></iframe>"
     },
     "watering": "Regularly",
     "depth_water_requirement": [],
@@ -419,7 +419,7 @@
     "pruning_count": [],
     "seeds": 1,
     "maintenance": null,
-    "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362&key=sk-9HUZ679976f54331b8380",
+    "care-guides": "http://perenual.com/api/species-care-guide-list?species_id=362",
     "soil": [],
     "growth_rate": "High",
     "drought_tolerant": false,

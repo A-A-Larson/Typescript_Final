@@ -3,239 +3,470 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --lightaccent: rgb(234, 234, 234);
+  --background: #f6f8f3;
+  --surface: #ffffff;
+  --foreground: #1f2a22;
+  --muted: #667568;
+  --border: #e1e8dc;
+  --primary: #2f6b3f;
+  --primary-dark: #214d2d;
+  --primary-soft: #e6f1e4;
+  --accent: #c9a24a;
+  --danger: #b3382c;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(31, 42, 34, 0.06), 0 8px 24px rgba(31, 42, 34, 0.06);
+  --shadow-hover: 0 2px 4px rgba(31, 42, 34, 0.08), 0 14px 32px rgba(31, 42, 34, 0.12);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.55;
+  min-height: 100vh;
 }
 
-h1 {
-  text-align: center;
+a {
+  color: var(--primary);
 }
 
-h2 {
-  font-size: 2.5rem;  
+/* ---------- Header ---------- */
+
+.siteHeader {
+  background: var(--primary-dark);
+  color: #fff;
 }
 
-h3 {
-  font-size: 1.25rem;
-  padding-top: .5em;
-}
-
-
-.mainGrid {    
-  padding: 1em;
-  display: grid;
-  gap: 1em;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:  "picture      picture"
-                        "identify     identify"
-                        "prepare      prepare"
-                        "prevent      prevent"
-                        "propagate    propagate"
-                        "picking      picking";
-  
-}  
-
-
-.searchSection {
-  border: solid var(--foreground);
-  width: 100%;
+.siteHeaderInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-top: 1em;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 1.1rem;
+}
+
+.siteHeaderTag {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pageShell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+/* ---------- Home / search ---------- */
+
+.hero {
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--primary-dark);
+}
+
+.heroSub {
+  margin: 0.75rem auto 0;
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 560px;
+  margin: 1.75rem auto 0;
+  padding: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.searchForm:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47, 107, 63, 0.18);
 }
 
 .searchInput {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  color: var(--foreground);
+  outline: none;
 }
 
-.searchInput:focus {
-  outline: solid var(--lightaccent);
+.searchInput::placeholder {
+  color: #9aa79c;
 }
 
 .searchSubmitButton {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  width: 7ch;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.15s ease;
 }
 
-.intro {
-  max-width: 70ch;
-  text-align: justify;
-  padding-top: 1em;
+.searchSubmitButton:hover {
+  background: var(--primary-dark);
+}
+
+.formError {
+  margin-top: 0.75rem;
+  color: var(--danger);
+  font-size: 0.95rem;
+}
+
+.statusText {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 0;
+}
+
+/* ---------- Results grid ---------- */
+
+.resultsHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 1rem;
+}
+
+.resultsHeader h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.resultsCount {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .apiResultsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.1rem;
+}
+
+.plantCard {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.plantCard:hover,
+.plantCard:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary);
+  outline: none;
+}
+
+.plantCardArt {
+  height: 120px;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--primary-soft), #cfe5cb);
+}
+
+.plantCardBody {
+  padding: 1rem 1.1rem 1.15rem;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.plantListButtonContainer {
-  width: 80vw;
-  display: flex;
-  justify-self: center;
+.plantCardName {
+  font-weight: 700;
+  font-size: 1.05rem;
 }
 
-.plantListButton {
-  width: 100%;
+.plantCardId {
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
-.plantListButton:hover {
-  background-color: var(--lightaccent);
+.plantCardArrow {
+  color: var(--primary);
+  font-size: 1.25rem;
+  transition: transform 0.15s ease;
 }
 
-.plantDetailsContainer {
-  display: flex;
-  flex-direction: column;
+.plantCard:hover .plantCardArrow {
+  transform: translateX(3px);
+}
+
+/* ---------- Details page ---------- */
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.5rem 0 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.mainGrid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "picture"
+    "identify"
+    "prepare"
+    "prevent"
+    "propagate"
+    "picking";
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
 }
 
 .imageSection {
   grid-area: picture;
-  height: 400px;
-  width: auto;
-  display: flex;
-  justify-content: center;
   position: relative;
-  border-radius: 0px 50px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, var(--primary-soft), #cfe5cb);
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
 }
 
 .plantImage {
-  border-radius: 0px 50px;
   object-fit: cover;
 }
 
 .idSection {
   grid-area: identify;
-  padding: 1em;
-  border-radius: 50px 0px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.plantTitle {
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--primary-dark);
+}
+
+.scientificName {
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.chipMuted {
+  background: #eef0ec;
+  color: var(--muted);
+}
+
+.sectionLabel {
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .description {
-  text-align: justify;
+  margin-top: 0.35rem;
+}
+
+.preparationSection,
+.preventionSection,
+.propagationSection,
+.pickingSection {
+  border-top: 4px solid var(--primary);
 }
 
 .preparationSection {
   grid-area: prepare;
-  padding: 1em;
-  background-color: #E5D9B6;
-  border-radius: 50px 0px;
-}
-
-.preparationSectionContainer {
-  padding: 2em;
-  background-color: var(--background);
-  width: 100%;
-  height: 100%;
-  border-radius: 50px 0px; 
-}
-
-.hardinessImage {
-  height: 100%;
-  width: auto;
+  border-top-color: #c9a24a;
 }
 
 .preventionSection {
   grid-area: prevent;
-  padding: 1em;
-  background-color: #A4BE7B;
-  border-radius: 50px 0px;
-}
-
-.preventionSectionContainer {
-  padding: 2em;
-  background-color: var(--background);
-  width: 100%;
-  height: 100%;
-  border-radius: 50px 0px;
-}
-
-.pruningMonth {
-  padding-bottom: 1em;
+  border-top-color: #6fa56a;
 }
 
 .propagationSection {
   grid-area: propagate;
-  padding: 1em;
-  background-color: #5F8D4E;
-  border-radius: 0px 50px;
-}
-
-.propagationSectionContainer {
-  padding: 2em;
-  background-color: var(--background);
-  width: 100%;
-  height: 100%;
-  border-radius: 0px 50px;
-}
-
-.propagationMethods {
-  padding-bottom: 1em;
+  border-top-color: #3f8456;
 }
 
 .pickingSection {
   grid-area: picking;
-  padding: 1em;
-  background-color: #285430;
-  border-radius: 0px 50px;
+  border-top-color: var(--primary-dark);
 }
 
-.pickingSectionContainer {
-  padding: 2em;
-  background-color: var(--background);
-  width: 100%;
-  height: 100%;
-  border-radius: 0px 50px;
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
+.factList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
 
+.fact {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
 
-@media (min-width: 1330px) {
-  .mainGrid {    
-    padding: 1em;
-    display: grid;
-    gap: 1em;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "picture      picture     identify    identify"
-                         "picture      picture     identify    identify"
-                         "prepare      prevent     propagate   picking "
-                         "prepare      prevent     propagate   picking ";
-    
-  }  
+.fact:last-child {
+  border-bottom: none;
+}
+
+.fact dt {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.fact dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.badgeYes,
+.badgeNo {
+  display: inline-block;
+  padding: 0.05rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badgeYes {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.badgeNo {
+  background: #eef0ec;
+  color: var(--muted);
+}
+
+.cardLink {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- Wider screens ---------- */
+
+@media (min-width: 720px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "picture   identify"
+      "prepare   prevent"
+      "propagate picking";
+  }
 
   .imageSection {
-    grid-area: picture;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    border-radius: 0px 50px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    min-height: 100%;
   }
-  
-  .plantImage {
-    border-radius: 0px 50px;
-    object-fit: cover;
+}
+
+@media (max-width: 520px) {
+  .siteHeaderTag {
+    display: none;
+  }
+
+  .searchForm {
+    border-radius: var(--radius);
   }
 }
