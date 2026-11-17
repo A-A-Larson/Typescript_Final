@@ -2,5 +2,7 @@
 
 ## The assignment was to create a basic front end using React and Typescript with data from an API.
 
-![image](https://github.com/user-attachments/assets/2f354b62-8c81-4292-85c6-2b0b0c7c6077)
-![image](https://github.com/user-attachments/assets/0c2ac1bc-2dcb-4c09-956b-f8426f59ec77)
+<img width="1800" height="1350" alt="react-frontend-exercise webp" src="https://github.com/user-attachments/assets/984d1cc2-7b78-46bd-9060-d1555c60cc7c" />
+
+<img width="1800" height="1350" alt="react-frontend-exercise webp" src="https://github.com/user-attachments/assets/56a3623a-d71a-4ca4-8847-560260df9923" />
+
